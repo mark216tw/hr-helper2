@@ -122,6 +122,34 @@
         </div>
     </div>
 
+    <!-- 重新抽籤確認 Modal -->
+    <div class="modal-overlay" id="resetDrawModal">
+        <div class="modal">
+            <div class="modal-header">🔄 確認重新抽籤</div>
+            <div class="modal-body">
+                確定要清除目前的抽籤結果嗎？此動作無法復原。
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="app.closeModal('resetDrawModal')">取消</button>
+                <button class="btn-primary" onclick="app.confirmResetDraw()">確定重置</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 重新分組確認 Modal -->
+    <div class="modal-overlay" id="resetGroupsModal">
+        <div class="modal">
+            <div class="modal-header">🔄 確認重新分組</div>
+            <div class="modal-body">
+                確定要重新分組嗎？目前的分組結果將會被清除。
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="app.closeModal('resetGroupsModal')">取消</button>
+                <button class="btn-primary" onclick="app.confirmResetGroups()">確定重新分組</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 
 </body>

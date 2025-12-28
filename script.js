@@ -179,13 +179,16 @@ const app = {
 
     resetDrawResults() {
         if (this.state.drawResults.length === 0) return;
-        if (confirm('確定要清除目前的抽籤結果嗎？')) {
-            this.state.drawResults = [];
-            this.renderDrawResults();
-            this.updateStats();
-            this.saveToStorage();
-            document.getElementById('slotMachine').innerText = '準備開始...';
-        }
+        this.openModal('resetDrawModal');
+    },
+
+    confirmResetDraw() {
+        this.state.drawResults = [];
+        this.renderDrawResults();
+        this.updateStats();
+        this.saveToStorage();
+        document.getElementById('slotMachine').innerText = '準備開始...';
+        this.closeModal('resetDrawModal');
     },
 
     /**
@@ -232,11 +235,14 @@ const app = {
 
     resetGroups() {
         if (this.state.groups.length === 0) return;
-        if (confirm('確定要重新分組嗎？')) {
-            this.state.groups = [];
-            this.renderGroups();
-            this.saveToStorage();
-        }
+        this.openModal('resetGroupsModal');
+    },
+
+    confirmResetGroups() {
+        this.state.groups = [];
+        this.renderGroups();
+        this.saveToStorage();
+        this.closeModal('resetGroupsModal');
     },
 
     exportCSV() {
